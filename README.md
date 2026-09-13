@@ -4,7 +4,7 @@
 
 Native iPhone/iPad implementation targeting iOS 17+, accompanied by a Python source-verification pilot. Forest green, warm neutral surfaces, serif editorial headings, accessible native forms and an original generated onboarding photograph.
 
-This repository is an initial implementation, **not an App Store-ready or production-validated release**. No iOS binary has been built on this Windows machine. The user brief ends during section 39; subscription pricing and premium entitlements are intentionally unspecified.
+This repository is an initial implementation, **not an App Store-ready or production-validated release**. The app builds with Xcode 16.4 on GitHub Actions, and all four iOS tests pass on an iPhone simulator. The user brief ends during section 39; subscription pricing and premium entitlements are intentionally unspecified.
 
 ## Run on a Mac
 
@@ -25,7 +25,7 @@ xcodebuild -scheme CivicRule -sdk iphonesimulator \
 xcodebuild -scheme CivicRule -destination 'platform=iOS Simulator,name=iPhone 16' test
 ```
 
-The CI workflow builds the app and tests for a simulator; the `build-for-testing` step does not execute XCTest. The commands above explain how to execute tests on a selected simulator.
+The CI workflow selects an available iPhone simulator and executes XCTest with `xcodebuild test`. It uploads the simulator app, build log and `.xcresult` bundle. [Successful GitHub Actions run](https://github.com/lanray07/CivicRule-AI/actions/runs/34739972509). The simulator artifact is not a signed device IPA or a TestFlight release.
 
 ## Implemented paths
 
@@ -102,7 +102,7 @@ No fees, current compliance verdicts, exact authority boundaries, official conta
 - 13 Python unit/integration tests pass.
 - All Swift app and test files pass Swift frontend syntax parsing on Windows.
 - Live official-source retrieval and content hashing completed successfully.
-- Xcode compilation, XCTest execution, simulator rendering and physical-device tests were not available on this Windows host.
+- GitHub Actions: Xcode 16.4 compilation and 4 XCTest tests passed on an iPhone 16 Pro simulator running iOS 18.5. The required app icon and a StoreKit observation/isolation issue were fixed during remote validation.
+- Simulator UI inspection and physical-device tests remain outstanding. Signing credentials were not needed for the simulator build.
 
 Apple API references consulted: [on-device speech recognition](https://developer.apple.com/documentation/speech/sfspeechrecognitionrequest/requiresondevicerecognition), [StoreKit current entitlements](https://developer.apple.com/documentation/storekit/transaction/currententitlements).
-

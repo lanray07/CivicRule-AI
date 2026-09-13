@@ -2,15 +2,15 @@
 
 ## Boundaries of this delivery
 
-The brief describes a multi-jurisdiction regulated-information platform. This implementation provides a native local workspace and a deliberately narrow source-backed backend path. It does not claim the full brief is complete. The live service, authority datasets, purchase configuration and Apple device execution are not available in this environment.
+The brief describes a multi-jurisdiction regulated-information platform. This implementation provides a native local workspace and a deliberately narrow source-backed backend path. It does not claim the full brief is complete. GitHub Actions now builds the app and executes its four XCTest tests successfully with Xcode 16.4. The live service, authority datasets, purchase configuration and physical Apple device execution remain outstanding.
 
 ### Implemented but not device-validated
 
-SwiftUI navigation and forms; SwiftData persistence; local PDF/image OCR and camera scan; source-backed answer rendering; on-device voice capture; speech synthesis; MapKit search; local notification scheduling; device authentication; Keychain; export/deletion; StoreKit adapter. Swift syntax parsing does not typecheck Apple APIs or execute SwiftData macros.
+SwiftUI navigation and forms; SwiftData persistence; local PDF/image OCR and camera scan; source-backed answer rendering; on-device voice capture; speech synthesis; MapKit search; local notification scheduling; device authentication; Keychain; export/deletion; StoreKit adapter. Xcode now typechecks the Apple APIs and SwiftData macros. Unit tests exercise persistence, templates, action extraction and intent classification; they do not establish end-to-end device behavior.
 
 ### Explicitly incomplete
 
-- A complete iOS build, simulator screenshots, accessibility audit and physical-device test pass.
+- Simulator screenshots, accessibility audit and physical-device test pass. The simulator build and four unit tests are complete.
 - Verified geospatial jurisdiction resolution and local/planning/licensing authority routing. A user-entered council is not treated as verified.
 - Regulatory domains beyond the England pavement-seating pilot, including conflicting-source reconciliation and fee verification.
 - AI retrieval/extraction/plain-language generation. The implemented explanation is deterministic and editorially curated. No LLM provider is configured and no model is allowed to supply requirements from memory.
@@ -22,7 +22,7 @@ SwiftUI navigation and forms; SwiftData persistence; local PDF/image OCR and cam
 - App Intents and Siri shortcuts.
 - Cloud accounts, encrypted cloud storage, deletion APIs, backups, sync and per-user API authentication. The app stores records locally and the pilot backend stores only public source material.
 - Subscription limits, purchase benefits, prices, App Store server verification, App Store creative assets and purchase testing. StoreKit product IDs are intentionally empty because the source brief cuts off before the product definitions.
-- Release icon, launch artwork, App Store metadata, legal/privacy review, retention policy and final privacy manifest audit. The generated onboarding photo is a synthetic illustration of the product scenario, not a customer endorsement.
+- Launch artwork, App Store metadata, legal/privacy review, retention policy and final privacy manifest audit. An app icon is included. The generated onboarding photo is a synthetic illustration of the product scenario, not a customer endorsement.
 
 ## Architecture
 
@@ -68,4 +68,4 @@ Export includes original document bytes encoded as Base64 and all stored busines
 
 ## Validation record
 
-Windows host: Python tests executed successfully; Swift frontend parsing executed successfully; a live GOV.UK source fetched and hashed. No build, simulator, screenshots or physical-device result is claimed. CI configuration is provided but has not been run remotely.
+Windows host: Python tests and Swift frontend parsing passed; a live GOV.UK source was fetched and hashed. GitHub Actions run [34739972509](https://github.com/lanray07/CivicRule-AI/actions/runs/34739972509) built commit `9ee3dd8` using Xcode 16.4 and passed 4 XCTest tests on an iPhone 16 Pro / iOS 18.5 simulator, plus all 13 backend tests. Simulator app and test-result artifacts were uploaded. No UI screenshot inspection, physical-device validation, signed IPA or TestFlight upload is claimed.
