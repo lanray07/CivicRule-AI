@@ -1,0 +1,48 @@
+name: Checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s backend -v
+  ios:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show Xcode version
+        run: xcodebuild -version
+      - run: brew install xcodegen
+      - run: xcodegen generate
+      - name: Select an available iPhone simulator
+        run: |
+          DEVICE_ID=$(xcrun simctl list devices available -j | python3 -c 'import json,sys; d=json.load(sys.stdin); print(next(x["udid"] for runtime,devices in d["devices"].items() if "iOS" in runtime for x in devices if "iPhone" in x["name"]))')
+          echo "SIMULATOR_ID=$DEVICE_ID" >> "$GITHUB_ENV"
+      - name: Build and execute iOS tests
+        run: |
+          set -o pipefail
+          xcodebuild -scheme CivicRule -sdk iphonesimulator \
+            -destination "platform=iOS Simulator,id=$SIMULATOR_ID" \
+            -derivedDataPath build/DerivedData -resultBundlePath build/TestResults.xcresult \
+            CODE_SIGNING_ALLOWED=NO test | tee xcodebuild.log
+      - name: Upload build log and test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xcode-test-results
+          path: |
+            xcodebuild.log
+            build/TestResults.xcresult
+          retention-days: 14
+      - name: Package simulator app
+        run: ditto -c -k --sequesterRsrc --keepParent build/DerivedData/Build/Products/Debug-iphonesimulator/CivicRule.app build/CivicRule-simulator.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CivicRule-simulator
+          path: build/CivicRule-simulator.zip

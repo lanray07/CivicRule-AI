@@ -1,0 +1,12 @@
+.DS_Store
+.build/
+DerivedData/
+*.xcodeproj/
+*.xcworkspace/
+__pycache__/
+.venv/
+.env
+build/
+xcodebuild.log
+backend/data/
+*.xcuserstate
