@@ -55,10 +55,13 @@ struct SourceCard: View {
             Text("“\(source.excerpt)”").font(.subheadline).textSelection(.enabled)
             Text(source.publicationDate.map { "Published: \($0)" } ?? "Publication date not provided.").font(.caption).foregroundStyle(.secondary).padding(.top, 8)
             Text("Last checked: \(source.checkedAt)").font(.caption).foregroundStyle(.secondary)
+            if source.url.hasPrefix("https://www.gov.uk/") {
+                Text("Contains public sector information licensed under the Open Government Licence v3.0.").font(.caption2).foregroundStyle(.secondary)
+                Link("Open Government Licence", destination: URL(string: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/")!).font(.caption2)
+            }
             if let url = URL(string: source.url), url.scheme == "https" {
                 Link(destination: url) { Label("View official source", systemImage: "arrow.up.right").font(.subheadline.bold()) }.padding(.top, 8)
             }
         }
     }
 }
-

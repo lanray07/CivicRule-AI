@@ -27,7 +27,7 @@ jobs:
         run: python scripts/asc_inspect.py
       - name: Select newest stable installed Xcode
         run: |
-          XCODE_PATH=$(python3 -c 'import glob,re; p=[x for x in glob.glob("/Applications/Xcode_*.app") if re.search(r"Xcode_[0-9.]+\.app$",x)]; print(max(p,key=lambda x:tuple(map(int,re.search(r"Xcode_([0-9.]+)",x)[1].split(".")))))')
+          XCODE_PATH=$(python3 -c 'import glob,re; p=[x for x in glob.glob("/Applications/Xcode_*.app") if re.search(r"Xcode_[0-9.]+\.app$",x)]; print(max(p,key=lambda x:tuple(map(int,re.search(r"Xcode_([0-9.]+)\.app$",x)[1].split(".")))))')
           sudo xcode-select -s "$XCODE_PATH/Contents/Developer"
           xcodebuild -version
       - run: brew install xcodegen
