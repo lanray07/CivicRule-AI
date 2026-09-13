@@ -9,7 +9,7 @@ import Observation
     var busy = false
     // Empty until actual products, benefits and prices are approved in App Store Connect.
     let productIDs: [String]
-    private var updates: Task<Void, Never>?
+    @ObservationIgnored private var updates: Task<Void, Never>?
     init(productIDs: [String] = []) {
         self.productIDs = productIDs
         updates = Task { [weak self] in
@@ -51,4 +51,3 @@ import Observation
         catch { message = error.localizedDescription }
     }
 }
-
