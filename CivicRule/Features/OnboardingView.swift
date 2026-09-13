@@ -13,7 +13,7 @@ struct OnboardingView: View {
             ZStack {
                 if page == 0 || page == 3 {
                     GeometryReader { geometry in
-                        Image("ShopOwner").resizable().scaledToFill().frame(width: geometry.size.width, height: geometry.size.height).clipped()
+                        Image(page == 3 ? "CafeOwner" : "ShopOwner").resizable().scaledToFill().frame(width: geometry.size.width, height: geometry.size.height).clipped()
                     }
                 } else {
                   RoundedRectangle(cornerRadius: 40).fill(CivicTheme.forest.gradient)

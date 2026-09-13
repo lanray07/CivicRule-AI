@@ -16,6 +16,7 @@ targets:
       path: CivicRule/Info.plist
       properties:
         CFBundleDisplayName: CivicRule AI
+        ITSAppUsesNonExemptEncryption: false
         UILaunchScreen: {}
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: true
@@ -28,7 +29,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.civicrule.ios
-        MARKETING_VERSION: '0.1.0'
+        MARKETING_VERSION: '1.0'
         CURRENT_PROJECT_VERSION: '1'
   CivicRuleTests:
     type: bundle.unit-test
@@ -43,4 +44,3 @@ schemes:
         CivicRule: all
     test:
       targets: [CivicRuleTests]
-

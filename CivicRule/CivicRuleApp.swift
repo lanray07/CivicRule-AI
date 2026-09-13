@@ -3,7 +3,15 @@ import SwiftData
 
 @main struct CivicRuleApp: App {
     var body: some Scene {
-        WindowGroup { AppRoot() }
+        WindowGroup {
+            #if DEBUG
+            if let index = ProcessInfo.processInfo.arguments.firstIndex(of: "--screenshot-scene"), ProcessInfo.processInfo.arguments.count > index + 1 {
+                ScreenshotScene(scene: ProcessInfo.processInfo.arguments[index + 1])
+            } else { AppRoot() }
+            #else
+            AppRoot()
+            #endif
+        }
             .modelContainer(for: [Business.self, ChecklistItem.self, Permit.self, SavedAnswer.self, Notice.self])
     }
 }
@@ -85,4 +93,3 @@ struct MainView: View {
         }
     }
 }
-
