@@ -25,7 +25,7 @@ targets:
         NSCameraUsageDescription: Scan a notice you choose to explain.
         NSFaceIDUsageDescription: Unlock your private business records.
         NSLocationWhenInUseUsageDescription: Find the address of premises when you request it.
-        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.civicrule.ios
