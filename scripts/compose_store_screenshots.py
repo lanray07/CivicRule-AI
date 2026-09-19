@@ -64,8 +64,11 @@ def compose(source: Path, destination: Path, headline: str, footer: str) -> None
     kicker = "CIVICRULE AI  •  SMALL BUSINESS"
     kicker_box = draw.textbbox((0, 0), kicker, font=kicker_font)
     pill_width = kicker_box[2] + int(width * 0.05)
-    draw.rounded_rectangle((margin, int(header * 0.12), margin + pill_width, int(header * 0.12) + int(header * 0.16)), radius=999, fill=LIME)
-    draw.text((margin + int(width * 0.025), int(header * 0.135)), kicker, font=kicker_font, fill=FOREST)
+    pill_y = int(header * 0.12)
+    pill_pad_y = max(12, int(kicker_font.size * 0.35))
+    pill_height = (kicker_box[3] - kicker_box[1]) + pill_pad_y * 2
+    draw.rounded_rectangle((margin, pill_y, margin + pill_width, pill_y + pill_height), radius=999, fill=LIME)
+    draw.text((margin + int(width * 0.025), pill_y + pill_pad_y - kicker_box[1]), kicker, font=kicker_font, fill=FOREST)
     y = int(header * 0.34)
     for line in wrap(draw, headline, headline_font, width - margin * 2):
         draw.text((margin, y), line, font=headline_font, fill=WHITE)
