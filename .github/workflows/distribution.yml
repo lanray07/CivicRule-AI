@@ -33,11 +33,14 @@ jobs:
       - run: brew install xcodegen
       - run: xcodegen generate
       - name: Build simulator app for screenshots
+        if: ${{ inputs.upload_build == false }}
         run: xcodebuild -scheme CivicRule -configuration Debug -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -derivedDataPath build/DerivedData CODE_SIGNING_ALLOWED=NO build > build-screenshots.log 2>&1
       - name: Capture real iPhone and iPad screens
+        if: ${{ inputs.upload_build == false }}
         timeout-minutes: 20
         run: bash scripts/capture-screenshots.sh
       - uses: actions/upload-artifact@v4
+        if: ${{ inputs.upload_build == false }}
         with:
           name: app-store-screenshots
           path: build/screenshots
@@ -47,11 +50,9 @@ jobs:
           set -o pipefail
           xcodebuild -scheme CivicRule -configuration Release -destination 'generic/platform=iOS' \
             -archivePath build/CivicRule.xcarchive \
-            PRODUCT_BUNDLE_IDENTIFIER="$APP_BUNDLE_ID" DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
+            PRODUCT_BUNDLE_IDENTIFIER="$APP_BUNDLE_ID" \
             MARKETING_VERSION=1.0 CURRENT_PROJECT_VERSION="$GITHUB_RUN_NUMBER" \
-            CODE_SIGN_STYLE=Automatic -allowProvisioningUpdates \
-            -authenticationKeyPath "$ASC_KEY_PATH" -authenticationKeyID "$ASC_KEY_ID" \
-            -authenticationKeyIssuerID "$ASC_ISSUER_ID" archive | tee archive.log
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO archive | tee archive.log
       - name: Export and upload to App Store Connect
         if: inputs.upload_build
         run: |
