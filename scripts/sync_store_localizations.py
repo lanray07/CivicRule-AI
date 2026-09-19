@@ -87,9 +87,14 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--publish", action="store_true", help="Write reviewed localizations instead of previewing")
     args = parser.parse_args()
-    api = ASC()
     locales = metadata_files()
-    publish_version_locales(api, version_id(api), locales, not args.publish)
+    if not args.publish:
+        for item in locales:
+            print(f"validated version localization {item['locale']}")
+        print("Preview complete; no App Store data was changed.")
+        return
+    api = ASC()
+    publish_version_locales(api, version_id(api), locales, False)
 
 
 if __name__ == "__main__":

@@ -35,6 +35,7 @@ jobs:
       - name: Build simulator app for screenshots
         run: xcodebuild -scheme CivicRule -configuration Debug -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -derivedDataPath build/DerivedData CODE_SIGNING_ALLOWED=NO build > build-screenshots.log 2>&1
       - name: Capture real iPhone and iPad screens
+        timeout-minutes: 12
         run: bash scripts/capture-screenshots.sh
       - uses: actions/upload-artifact@v4
         with:

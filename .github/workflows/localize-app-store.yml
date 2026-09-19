@@ -30,14 +30,10 @@ jobs:
         with:
           python-version: '3.12'
       - run: python scripts/validate_store_metadata.py
-      - if: github.event_name == 'workflow_dispatch'
+      - if: github.event_name == 'workflow_dispatch' && inputs.publish
         run: pip install 'PyJWT[crypto]==2.10.1'
       - name: Preview App Store changes
         if: github.event_name == 'workflow_dispatch' && !inputs.publish
-        env:
-          ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
-          ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
-          ASC_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_API_PRIVATE_KEY }}
         run: python scripts/sync_store_localizations.py
       - name: Publish reviewed App Store changes
         if: github.event_name == 'workflow_dispatch' && inputs.publish
