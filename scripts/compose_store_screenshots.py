@@ -57,12 +57,16 @@ def wrap(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.FreeTypeFont, max
 def compose(source: Path, destination: Path, headline: str, footer: str) -> None:
     shot = Image.open(source).convert("RGB")
     width, height = shot.size
-    header = int(height * (0.18 if width < height * 0.65 else 0.16))
+    is_tablet = width >= height * 0.65
+    header = int(height * (0.18 if not is_tablet else 0.16))
     canvas = Image.new("RGB", (width, height), FOREST)
     draw = ImageDraw.Draw(canvas)
     margin = int(width * 0.07)
     kicker_font = ImageFont.truetype(font_path(True), max(24, int(width * 0.026)))
-    headline_font = ImageFont.truetype(font_path(True), max(48, int(width * 0.058)))
+    # Tablet screenshots have a wider canvas, so the phone scale makes a
+    # two-line headline collide with the keyword line below it.
+    headline_scale = 0.046 if is_tablet else 0.058
+    headline_font = ImageFont.truetype(font_path(True), max(48, int(width * headline_scale)))
     footer_font = ImageFont.truetype(font_path(False), max(24, int(width * 0.027)))
 
     kicker = "CIVICRULE AI  •  SMALL BUSINESS"
