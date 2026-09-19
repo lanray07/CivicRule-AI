@@ -1,0 +1,19 @@
+{
+  "locale": "es-ES",
+  "name": "CivicRule AI",
+  "subtitle": "Permisos y cumplimiento local",
+  "promotionalText": "Un siguiente paso más claro para tu pequeña empresa. Organiza revisiones del local, fechas de permisos y documentos en un solo lugar.",
+  "description": "Comprende los permisos locales, las licencias comerciales y las revisiones del establecimiento antes de actuar. CivicRule AI ofrece a las pequeñas empresas del Reino Unido un espacio tranquilo para organizar las cuestiones prácticas de cumplimiento al abrir y gestionar un negocio.\n\nEMPIEZA POR TU NEGOCIO\nCrea un perfil para una cafetería, barbería, salón, tienda, restaurante, oficio o negocio desde casa. Añade la ubicación y las actividades previstas para que cada lista esté vinculada al contexto correcto.\n\nCREA UNA LISTA PARA EL LOCAL\nOrganiza lo que debes confirmar antes de abrir o firmar un contrato: planificación, licencias, rótulos, residuos, acceso, seguridad contra incendios y horarios. Sigue el progreso y mantén visibles las dudas.\n\nREÚNE PERMISOS Y RENOVACIONES\nGuarda referencias, autoridades, fechas, estados y notas en un solo lugar. CivicRule te ayuda a preparar y organizar; no declara que un negocio cumpla la normativa.\n\nLEE LOS AVISOS CON MÁS CLARIDAD\nImporta un PDF o escanea un aviso municipal. CivicRule conserva el original y extrae el texto en tu dispositivo para que puedas revisarlo sin perder la fuente.\n\nPREGUNTA CON NATURALIDAD\nEscribe una pregunta práctica o díc­tala. La transcripción de voz permanece en tu dispositivo. Cuando haya una respuesta respaldada por fuentes, CivicRule muestra la fuente oficial, la fecha, las limitaciones y el siguiente paso.\n\nPRIVACIDAD DESDE EL DISEÑO\nLos datos de tu negocio permanecen en tu dispositivo. Puedes activar el bloqueo con Face ID o el código del dispositivo. CivicRule no vende datos personales.\n\nCivicRule ofrece información y herramientas de organización. Las normas locales dependen de los hechos, el establecimiento y la autoridad. Confirma las decisiones importantes con la autoridad correspondiente o un profesional cualificado.",
+  "keywords": "negocio,permisos,licencias,cumplimiento,local,renovación,documentos,planificación,municipio,pymes",
+  "supportUrl": "https://github.com/lanray07/CivicRule-AI/issues",
+  "marketingUrl": "https://github.com/lanray07/CivicRule-AI",
+  "privacyPolicyUrl": "https://github.com/lanray07/CivicRule-AI/blob/main/docs/PRIVACY.md",
+  "screenshotHeadlines": {
+    "welcome": "Permisos locales, próximos pasos claros",
+    "overview": "Tu espacio de cumplimiento empresarial",
+    "checklist": "Crea la lista de tu establecimiento",
+    "voice": "Pregunta por permisos con naturalidad",
+    "documents": "Revisa avisos en tu dispositivo",
+    "lease": "Revisa el local antes de firmar"
+  }
+}

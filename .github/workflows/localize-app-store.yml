@@ -1,0 +1,48 @@
+name: App Store localizations
+on:
+  pull_request:
+    paths:
+      - 'store-assets/metadata/**'
+      - 'scripts/validate_store_metadata.py'
+      - 'scripts/sync_store_localizations.py'
+  push:
+    branches: [main]
+    paths:
+      - 'store-assets/metadata/**'
+      - 'scripts/validate_store_metadata.py'
+      - 'scripts/sync_store_localizations.py'
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish the reviewed metadata to the draft App Store version
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  localize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_store_metadata.py
+      - if: github.event_name == 'workflow_dispatch'
+        run: pip install 'PyJWT[crypto]==2.10.1'
+      - name: Preview App Store changes
+        if: github.event_name == 'workflow_dispatch' && !inputs.publish
+        env:
+          ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
+          ASC_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_API_PRIVATE_KEY }}
+        run: python scripts/sync_store_localizations.py
+      - name: Publish reviewed App Store changes
+        if: github.event_name == 'workflow_dispatch' && inputs.publish
+        env:
+          ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
+          ASC_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_API_PRIVATE_KEY }}
+        run: python scripts/sync_store_localizations.py --publish

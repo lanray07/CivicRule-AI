@@ -1,0 +1,19 @@
+{
+  "locale": "en-GB",
+  "name": "CivicRule AI",
+  "subtitle": "Local Permits & Compliance",
+  "promotionalText": "A clearer next step for your small business. Organise premises checks, keep permit dates together and read your documents with the original always in view.",
+  "description": "Understand local permits, business licences and premises checks before you act. CivicRule AI gives UK small businesses one calm workspace for the practical compliance questions that come with opening and running a business.\n\nSTART WITH YOUR BUSINESS\nCreate a profile for a café, barber, salon, shop, restaurant, trade or home business. Record the location and activities you are considering so each checklist stays tied to the right business context.\n\nBUILD A PREMISES CHECKLIST\nOrganise the questions to confirm before opening or signing a lease, including planning, licensing, signage, waste, access, fire safety and opening hours. Mark progress clearly and keep uncertainty visible.\n\nKEEP PERMITS AND RENEWALS TOGETHER\nStore permit references, authorities, dates, status and notes in one place. CivicRule helps you prepare and organise; it does not declare a business compliant.\n\nREAD NOTICES MORE CLEARLY\nImport a PDF or scan a council notice. CivicRule keeps the original available while extracting text on your device, helping you review the document without losing the source.\n\nASK NATURALLY\nType a practical question or dictate it by voice. Voice transcription stays on your device. When a supported source-backed answer is available, CivicRule shows the official source, date, limitations and a clear next step.\n\nPRIVACY BY DESIGN\nYour business records are stored on your device. You can enable an app lock with Face ID or your device passcode. CivicRule does not sell personal data.\n\nCivicRule provides informational assistance and organisation tools. Local rules depend on the facts, premises and authority involved. Confirm important decisions with the relevant authority or a qualified adviser.",
+  "keywords": "business,permits,licences,checklist,premises,renewals,documents,planning,council,small business",
+  "supportUrl": "https://github.com/lanray07/CivicRule-AI/issues",
+  "marketingUrl": "https://github.com/lanray07/CivicRule-AI",
+  "privacyPolicyUrl": "https://github.com/lanray07/CivicRule-AI/blob/main/docs/PRIVACY.md",
+  "screenshotHeadlines": {
+    "welcome": "Local permits, clearer next steps",
+    "overview": "Your small-business compliance workspace",
+    "checklist": "Build a premises checklist",
+    "voice": "Ask permit questions naturally",
+    "documents": "Review council notices on device",
+    "lease": "Check the premises before you sign"
+  }
+}

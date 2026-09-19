@@ -1,0 +1,19 @@
+{
+  "locale": "de-DE",
+  "name": "CivicRule AI",
+  "subtitle": "Lokale Genehmigungen",
+  "promotionalText": "Der klarere nächste Schritt für Ihr Kleinunternehmen. Ordnen Sie Standortprüfungen, Genehmigungsfristen und Dokumente an einem Ort.",
+  "description": "Verstehen Sie lokale Genehmigungen, gewerbliche Lizenzen und Standortprüfungen, bevor Sie handeln. CivicRule AI bietet Kleinunternehmen im Vereinigten Königreich einen ruhigen Arbeitsbereich für praktische Compliance-Fragen bei der Gründung und Führung eines Betriebs.\n\nBEGINNEN SIE MIT IHREM BETRIEB\nErstellen Sie ein Profil für Café, Barbershop, Salon, Geschäft, Restaurant, Handwerk oder Heimgewerbe. Erfassen Sie Standort und geplante Tätigkeiten, damit jede Checkliste zum richtigen Betriebskontext gehört.\n\nSTANDORT-CHECKLISTE ERSTELLEN\nOrdnen Sie die Punkte, die vor der Eröffnung oder Vertragsunterzeichnung zu klären sind: Planung, Lizenzen, Beschilderung, Abfall, Zugang, Brandschutz und Öffnungszeiten. Verfolgen Sie den Fortschritt und halten Sie Unsicherheiten sichtbar.\n\nGENEHMIGUNGEN UND FRISTEN BÜNDELN\nSpeichern Sie Referenzen, Behörden, Daten, Status und Notizen an einem Ort. CivicRule unterstützt Vorbereitung und Organisation, erklärt einen Betrieb aber nicht für regelkonform.\n\nBESCHEIDE KLARER LESEN\nImportieren Sie ein PDF oder scannen Sie ein Behördenschreiben. CivicRule bewahrt das Original auf und extrahiert Text auf Ihrem Gerät, damit die Quelle stets verfügbar bleibt.\n\nFRAGEN SIE GANZ NATÜRLICH\nTippen oder diktieren Sie eine praktische Frage. Die Sprachtranskription bleibt auf Ihrem Gerät. Wenn eine belegte Antwort verfügbar ist, zeigt CivicRule offizielle Quelle, Datum, Grenzen und nächsten Schritt.\n\nDATENSCHUTZ VON ANFANG AN\nIhre Betriebsdaten bleiben auf Ihrem Gerät. Aktivieren Sie auf Wunsch eine Sperre mit Face ID oder Gerätecode. CivicRule verkauft keine personenbezogenen Daten.\n\nCivicRule bietet Informations- und Organisationstools. Lokale Regeln hängen von Sachlage, Standort und Behörde ab. Bestätigen Sie wichtige Entscheidungen bei der zuständigen Behörde oder einer qualifizierten Beratung.",
+  "keywords": "gewerbe,genehmigung,lizenz,checkliste,standort,fristen,dokumente,planung,behörde,kleinunternehmen",
+  "supportUrl": "https://github.com/lanray07/CivicRule-AI/issues",
+  "marketingUrl": "https://github.com/lanray07/CivicRule-AI",
+  "privacyPolicyUrl": "https://github.com/lanray07/CivicRule-AI/blob/main/docs/PRIVACY.md",
+  "screenshotHeadlines": {
+    "welcome": "Lokale Regeln, klare nächste Schritte",
+    "overview": "Ihr Arbeitsbereich für Compliance",
+    "checklist": "Standort-Checkliste erstellen",
+    "voice": "Genehmigungsfragen einfach stellen",
+    "documents": "Behördenschreiben lokal prüfen",
+    "lease": "Standort vor Unterschrift prüfen"
+  }
+}

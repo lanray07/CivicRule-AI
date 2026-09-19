@@ -6,11 +6,25 @@ import SwiftData
 struct ScreenshotScene: View {
     let scene: String
     @Environment(\.modelContext) private var context
-    @State private var business: Business?
+    @State private var business: Business
+
+    init(scene: String) {
+        self.scene = scene
+        _business = State(initialValue: Business(
+            name: "Lanre’s Barbers",
+            kind: "Barber",
+            address: "London · prospective premises",
+            nation: "England",
+            authority: "To be confirmed",
+            activities: "Haircuts and grooming",
+            hours: "Monday–Saturday, 9am–6pm"
+        ))
+    }
+
     var body: some View {
         Group {
             if scene == "welcome" { OnboardingView {} }
-            else if let business {
+            else {
                 NavigationStack {
                     Group {
                         switch scene {
@@ -25,11 +39,11 @@ struct ScreenshotScene: View {
                 }
             }
         }.tint(CivicTheme.forest).task {
-            guard business == nil else { return }
-            let profile = Business(name: "Lanre’s Barbers", kind: "Barber", address: "London · prospective premises", nation: "England", authority: "To be confirmed", activities: "Haircuts and grooming", hours: "Monday–Saturday, 9am–6pm")
-            context.insert(profile)
-            for (category,title) in BusinessTemplates.checks(for: profile.kind) { context.insert(ChecklistItem(businessID: profile.id, title: title, category: category)) }
-            business = profile
+            guard scene != "welcome", business.modelContext == nil else { return }
+            context.insert(business)
+            for (category,title) in BusinessTemplates.checks(for: business.kind) {
+                context.insert(ChecklistItem(businessID: business.id, title: title, category: category))
+            }
         }
     }
 }

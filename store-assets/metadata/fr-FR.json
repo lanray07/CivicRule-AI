@@ -1,0 +1,19 @@
+{
+  "locale": "fr-FR",
+  "name": "CivicRule AI",
+  "subtitle": "Permis locaux et conformité",
+  "promotionalText": "Une prochaine étape plus claire pour votre petite entreprise. Organisez vos vérifications, échéances de permis et documents au même endroit.",
+  "description": "Comprenez les permis locaux, les licences professionnelles et les vérifications des locaux avant d’agir. CivicRule AI offre aux petites entreprises du Royaume-Uni un espace serein pour organiser les questions pratiques de conformité liées à l’ouverture et à la gestion d’une activité.\n\nPARTEZ DE VOTRE ENTREPRISE\nCréez un profil pour un café, un salon de coiffure, une boutique, un restaurant, un artisan ou une activité à domicile. Indiquez le lieu et les activités envisagées afin que chaque liste reste liée au bon contexte.\n\nCRÉEZ UNE LISTE POUR VOS LOCAUX\nOrganisez les points à confirmer avant l’ouverture ou la signature d’un bail : urbanisme, licences, enseigne, déchets, accès, sécurité incendie et horaires. Suivez l’avancement et conservez les incertitudes visibles.\n\nREGROUPEZ PERMIS ET RENOUVELLEMENTS\nConservez références, autorités, dates, statuts et notes au même endroit. CivicRule vous aide à préparer et organiser vos démarches, sans déclarer votre entreprise conforme.\n\nLISEZ PLUS CLAIREMENT LES AVIS\nImportez un PDF ou scannez un avis administratif. CivicRule conserve l’original et extrait le texte sur votre appareil pour vous aider à le relire sans perdre la source.\n\nPOSEZ VOS QUESTIONS NATURELLEMENT\nÉcrivez une question pratique ou dictez-la. La transcription vocale reste sur votre appareil. Lorsqu’une réponse étayée est disponible, CivicRule affiche la source officielle, la date, les limites et l’étape suivante.\n\nCONFIDENTIALITÉ INTÉGRÉE\nVos données d’entreprise restent sur votre appareil. Vous pouvez activer le verrouillage avec Face ID ou le code de l’appareil. CivicRule ne vend pas vos données personnelles.\n\nCivicRule fournit des informations et des outils d’organisation. Les règles locales dépendent des faits, des locaux et de l’autorité compétente. Confirmez toute décision importante auprès de l’autorité concernée ou d’un professionnel qualifié.",
+  "keywords": "entreprise,permis,licences,conformité,locaux,renouvellement,documents,urbanisme,conseil,commerce",
+  "supportUrl": "https://github.com/lanray07/CivicRule-AI/issues",
+  "marketingUrl": "https://github.com/lanray07/CivicRule-AI",
+  "privacyPolicyUrl": "https://github.com/lanray07/CivicRule-AI/blob/main/docs/PRIVACY.md",
+  "screenshotHeadlines": {
+    "welcome": "Permis locaux, prochaines étapes claires",
+    "overview": "L’espace conformité de votre entreprise",
+    "checklist": "Créez la liste de vos locaux",
+    "voice": "Posez vos questions naturellement",
+    "documents": "Lisez les avis sur votre appareil",
+    "lease": "Vérifiez les locaux avant de signer"
+  }
+}
