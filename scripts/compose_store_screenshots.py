@@ -8,7 +8,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-SCENES = ("welcome", "overview", "checklist", "voice", "documents", "lease")
+SCENES = ("welcome", "overview", "checklist", "voice", "documents", "lease", "permits", "sources", "privacy", "address")
 FOOTERS = {
     "welcome": "Plain-English guidance • Sources included",
     "overview": "Business profile • Permit dates • Records",
@@ -16,6 +16,10 @@ FOOTERS = {
     "voice": "On-device voice transcription",
     "documents": "Original document always in view",
     "lease": "Planning • Access • Fire safety • Opening hours",
+    "permits": "References • Renewal dates • Reminders",
+    "sources": "Official source • Checked date • Limitations",
+    "privacy": "Local records • Optional app lock • Data export",
+    "address": "Planning • Licensing • Signage • Property conditions",
 }
 FOREST = "#123F34"
 LIME = "#D3EF7A"

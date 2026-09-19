@@ -24,7 +24,7 @@ for DEVICE in iphone ipad; do
   xcrun simctl ui "$UDID" appearance light
   xcrun simctl install "$UDID" "$APP"
   mkdir -p "build/screenshots/$DEVICE"
-  for SCENE in welcome overview checklist voice documents lease; do
+  for SCENE in welcome overview checklist voice documents lease permits sources privacy address; do
     echo "Capturing $DEVICE/$SCENE"
     xcrun simctl terminate "$UDID" com.civicrule.ios >/dev/null 2>&1 || true
     run_timeout 30 xcrun simctl launch "$UDID" com.civicrule.ios --screenshot-scene "$SCENE"
